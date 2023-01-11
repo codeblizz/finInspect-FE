@@ -1,0 +1,65 @@
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.main {
+  @apply bg-[#022c1b] border-0 h-[70vh] m-24 p-12 border-red-50 rounded-lg md:grid md:grid-cols-5 flex flex-col justify-center items-center;
+}
+
+.loginHero {
+  @apply flex p-10 justify-start items-center col-span-3;
+}
+
+.form {
+  @apply flex flex-col md:border-l-2 border-teal-900 md:pl-10 justify-center items-center col-span-2;
+}
+
+.input {
+  @apply mt-10 bg-slate-400 h-[35px] px-2 rounded-md text-gray-900 text-xs;
+}
+
+.password {
+  @apply flex justify-between items-center ml-4;
+}
+
+.passwordIcon {
+  @apply relative top-[26%] right-[16%] md:mt-10 cursor-pointer;
+}
+
+/* .p {
+  @apply text-xl;
+} */
+
+.buttonGroup {
+  @apply flex flex-grow;
+}
+
+.button {
+  @apply mt-10 px-5 text-xs bg-green-700 mx-2 text-white h-[35px] rounded-lg cursor-pointer;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .vercelLogo {
+    filter: invert(1);
+  }
+
+  .logo,
+  .thirteen img {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

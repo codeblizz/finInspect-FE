@@ -1,0 +1,14 @@
+@tailwind components;
+@tailwind utilities;
+
+.box {
+  background: var(--card-bg-color);
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  margin-bottom: 15px;
+
+  /* &:global.shadow_none {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    margin-bottom: 1rem;
+  } */
+}
