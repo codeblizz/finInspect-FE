@@ -1,3 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.main {
+  @apply flex flex justify-center items-center bg-[#022c1b] border-0 h-[70vh] mt-24 md:m-24 p-12 border-red-50 rounded-lg md:grid md:grid-cols-4 lg:grid lg:grid-cols-5;
+}
+
+.form {
+  @apply flex z-0 flex-col justify-center items-center md:border-l-2 border-teal-900 lg:pl-14 md:col-span-3 lg:col-span-2;
+}
+
+.input_group {
+  @apply grid grid-cols-2 gap-2 place-items-stretch;
+}
+
+.input {
+  @apply mt-5 bg-slate-200 h-[35px] max-w-fit px-2 rounded-md text-gray-800 text-xs;
+}
+
+.select {
+ @apply bg-slate-200 text-gray-900 text-xs dark:bg-[#194043];
+}
+
+.password {
+  @apply flex justify-between items-center ml-3;
+} *
+
+.pwd_reg_icon {
+  @apply relative text-slate-500 top-[10%] right-[14%] mt-5 cursor-pointer;
+}
+
+.buttonGroup {
+  @apply flex flex-grow mb-7 ml-2;
+}
+
+.para_reg {
+  @apply text-xs text-gray-500 cursor-pointer underline;
+}
+
+.button {
+  @apply mt-10 px-7 text-xs bg-green-700 mx-1 text-white h-[35px] rounded-lg cursor-pointer;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .vercelLogo {
+    filter: invert(1);
+  }
+
+  .logo,
+  .thirteen img {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

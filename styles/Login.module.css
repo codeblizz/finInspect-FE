@@ -2,39 +2,39 @@
 @import 'tailwindcss/utilities';
 
 .main {
-  @apply bg-[#022c1b] border-0 h-[70vh] m-24 p-12 border-red-50 rounded-lg md:grid md:grid-cols-5 flex flex-col justify-center items-center;
+  @apply bg-[#022c1b] border-0 h-[70vh] mt-24 md:m-24 p-12 border-red-50 rounded-lg md:grid md:grid-cols-4 lg:grid lg:grid-cols-5 flex flex-col justify-center items-center;
 }
 
 .loginHero {
-  @apply flex p-10 justify-start items-center col-span-3;
+  @apply flex p-10 justify-start items-center md:col-span-1 lg:col-span-3;
 }
 
 .form {
-  @apply flex flex-col md:border-l-2 border-teal-900 md:pl-10 justify-center items-center col-span-2;
+  @apply flex flex-col border-l-0 md:border-l-2 md:border-teal-900 md:pl-10 justify-center items-center md:col-span-3 lg:col-span-2;
 }
 
 .input {
-  @apply mt-10 bg-slate-400 h-[35px] px-2 rounded-md text-gray-900 text-xs;
+  @apply mt-8 bg-slate-200 h-[35px] px-2 rounded-md text-gray-800 text-xs;
 }
 
 .password {
-  @apply flex justify-between items-center ml-4;
+  @apply flex justify-between items-center ml-3;
 }
 
-.passwordIcon {
-  @apply relative top-[26%] right-[16%] md:mt-10 cursor-pointer;
+.password_icon {
+  @apply relative text-slate-500 top-[26%] right-[16%] md:mt-8 cursor-pointer;
 }
-
-/* .p {
-  @apply text-xl;
-} */
 
 .buttonGroup {
-  @apply flex flex-grow;
+  @apply flex flex-grow mb-7 ml-1.5;
+}
+
+.para_reg {
+  @apply text-xs text-gray-500 cursor-pointer underline;
 }
 
 .button {
-  @apply mt-10 px-5 text-xs bg-green-700 mx-2 text-white h-[35px] rounded-lg cursor-pointer;
+  @apply mt-14 px-5 text-xs bg-green-700 mx-1 text-white h-[35px] rounded-lg cursor-pointer;
 }
 
 /* Tablet and Smaller Desktop */

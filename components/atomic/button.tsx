@@ -1,5 +1,5 @@
 import React from 'react';
-import { buttonType } from '../../types/button.type';
+import { buttonType } from '../../types/components/button.type';
 
 function Button({
   name,
@@ -9,6 +9,7 @@ function Button({
   value,
   className,
   buttonText,
+  onClick,
 }: buttonType) {
   return (
     <button
@@ -18,6 +19,7 @@ function Button({
       type={type}
       value={value}
       className={className}
+      onClick={onClick}
     >
       {buttonText}
     </button>
