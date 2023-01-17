@@ -6,7 +6,7 @@
 }
 
 .form {
-  @apply flex z-0 flex-col justify-center items-center md:border-l-2 border-teal-900 lg:pl-14 md:col-span-3 lg:col-span-2;
+  @apply flex z-0 flex-col justify-center items-center lg:pl-14 md:col-span-3 lg:col-span-2;
 }
 
 .input_group {

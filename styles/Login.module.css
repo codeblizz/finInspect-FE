@@ -6,11 +6,11 @@
 }
 
 .loginHero {
-  @apply flex p-10 justify-start items-center md:col-span-1 lg:col-span-3;
+  @apply flex justify-start justify-center items-center md:col-span-1 lg:col-span-3;
 }
 
 .form {
-  @apply flex flex-col border-l-0 md:border-l-2 md:border-teal-900 md:pl-10 justify-center items-center md:col-span-3 lg:col-span-2;
+  @apply flex flex-col md:pl-10 justify-center items-center md:col-span-3 lg:col-span-2;
 }
 
 .input {
