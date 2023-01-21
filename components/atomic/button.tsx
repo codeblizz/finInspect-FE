@@ -1,5 +1,6 @@
 import React from 'react';
 import { buttonType } from '../../types/components/button.type';
+import Loader from 'components/assets/icons/loader';
 
 function Button({
   name,
@@ -9,6 +10,7 @@ function Button({
   value,
   className,
   buttonText,
+  loader,
   onClick,
 }: buttonType) {
   return (
@@ -21,7 +23,9 @@ function Button({
       className={className}
       onClick={onClick}
     >
-      {buttonText}
+      <span className='flex justify-center items-center'>
+        {loader ? <Loader className='animate-spin' /> : buttonText}
+      </span>
     </button>
   );
 }

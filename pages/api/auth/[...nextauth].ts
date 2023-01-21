@@ -30,8 +30,6 @@ export default NextAuth({
         if(credentials) {
           res = await LoginService.login(payload);
         }
-
-        console.log('next user', res.data);
         const user = res.data;
         if (res.status === 200 && user) {
           if (typeof window !== 'undefined') {
@@ -39,6 +37,7 @@ export default NextAuth({
           }
           return user;
         }
+        console.log('next user', user);
         return null;
       },
     }),

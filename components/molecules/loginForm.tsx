@@ -19,6 +19,7 @@ function LoginForm({ regState, setRegState }: any) {
   const [infoMsg, setInfoMsg] = useState({ msg: '' });
   const [errorMsg, setErrorMsg] = useState({ msg: ''});
   const [notFoundError, setNotFoundError] = useState({ msg: ''})
+  const [loader, setLoader] = useState(false);
   const {
     control,
     reset,
@@ -32,16 +33,17 @@ function LoginForm({ regState, setRegState }: any) {
   });
 
   const onSubmit = async (data: ILogin) => {
+    setLoader(true);
     const result: any = await signIn('credentials', {
       email: data.email,
       password: data.password,
     });
-    if (result.status === 200) {
+    if (result?.status === 200) {
       setOpen(true);
       setInfoMsg(result.data.message);
-    } else if(result.status === 404) {
+    } else if(result?.status === 404) {
       setOpen(true);
-      setNotFoundError({ msg: result.data.message})
+      setNotFoundError({ msg: result?.data.message})
     } else {
       setOpen(true);
       setErrorMsg({ msg: 'Something went wrong' });
@@ -50,12 +52,13 @@ function LoginForm({ regState, setRegState }: any) {
 
   const onResetField = () => {
     reset();
+    setLoader(false);
   };
 
   return (
     <Fragment>
       <Form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <Paragraph text='Login User' className='text-xl' />
+        <Paragraph text='Login User' className='text-xl underline underline-offset-4 decoration-gray-500 decoration-wavy' />
         <Input
           className={styles.input}
           type='text'
@@ -91,6 +94,7 @@ function LoginForm({ regState, setRegState }: any) {
             className={styles.button}
             type={'submit'}
             buttonText='Login'
+            loader={loader}
             onClick={handleSubmit(onSubmit)}
           />
         </div>
@@ -122,7 +126,7 @@ function LoginForm({ regState, setRegState }: any) {
         }
         cancelButtonText='Cancel'
         okButtonText='Ok'
-        okButtonAction={() => router.push('/dashboard')}
+        okButtonAction={() => router.push('/welcome')}
       />
     </Fragment>
   );

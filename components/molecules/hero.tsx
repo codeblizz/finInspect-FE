@@ -43,15 +43,15 @@ function Hero() {
         priority={true}
       />
       <div className='flex flex-col justify-center items-center'>
-        <Paragraph className='text-xs my-2' text={ImageDesc[`${index + 1 % ImageDesc.length}`]} />
+        <Paragraph className='text-[9px] -ml-5 my-2' text={ImageDesc[`${index + 1 % ImageDesc.length}`]} />
         <div className=''>
-          <ul className='flex'>
+          <ul className='flex -ml-10'>
             {ImageElem.map((img, i) => (
               <li
                 key={i}
                 className={`${index === i ? 'text-white' : 'text-gray-500'}`}
               >
-                <BsDot onClick={() => setIndex(i)} className='cursor-pointer w-5 h-5'/>
+                <BsDot onClick={() => setIndex(i)} className='cursor-pointer'/>
               </li>
             ))}
           </ul>

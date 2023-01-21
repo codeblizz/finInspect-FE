@@ -28,6 +28,7 @@ const defaultValues = {
 function RegisterForm({ regState, setRegState, countryList }: any) {
   const router = useRouter();
   const [country, setCountry] = useState([]);
+  const [loader, setLoader] = useState(false);
   const [newPassword, setNewPassword] = useState({
     password: '',
     confirmPassword: '',
@@ -59,6 +60,7 @@ function RegisterForm({ regState, setRegState, countryList }: any) {
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
+    setLoader(true);
     const result: any = await registerService.registration(formFieldValues);
     if (result.status === 200) {
       setOpen(true);
@@ -91,6 +93,7 @@ function RegisterForm({ regState, setRegState, countryList }: any) {
     setValue('gender', formFieldValues.gender);
     setValue('countryCode', formFieldValues.countryCode);
     setNextDisplay(false);
+    setLoader(false)
   };
 
   const genderOptions = [
@@ -127,7 +130,7 @@ function RegisterForm({ regState, setRegState, countryList }: any) {
       <Form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         {!nextDisplay ? (
           <>
-            <Paragraph text='Register New User' className='text-xl mb-4' />
+            <Paragraph text='Register New User' className='text-xl mb-4 underline underline-offset-4 decoration-gray-500 decoration-wavy' />
             <InputGroup className={styles.input_group}>
               <Input
                 className={styles.input}
@@ -259,6 +262,7 @@ function RegisterForm({ regState, setRegState, countryList }: any) {
               className={styles.button}
               type={'button'}
               buttonText={'Login'}
+              loader={loader}
               onClick={handleSubmit(onSubmit)}
             />
           )}
