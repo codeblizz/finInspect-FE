@@ -6,5 +6,7 @@ export type buttonType = {
   value?: string;
   className?: string;
   buttonText: string;
+  loader?: boolean;
+  onClick?: ({e, data}:any) => void;
   onResetField?: () => void;
 };

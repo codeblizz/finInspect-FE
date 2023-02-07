@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/components/Box.module.css';
-import { BoxElementType } from '../../types/box.type';
+import { BoxElementType } from '../../types/components/box.type';
 
 function Box({ children, classes }: BoxElementType) {
   return (

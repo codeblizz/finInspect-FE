@@ -1,0 +1,6 @@
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.main {
+  @apply flex justify-center items-center bg-[#022c1b] border-0 h-[70vh] mt-24 md:m-24 p-12 border-red-50 rounded-lg md:grid md:grid-cols-4 lg:grid lg:grid-cols-5;
+}

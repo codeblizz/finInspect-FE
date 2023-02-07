@@ -1,5 +1,5 @@
 export type formType = {
     className: string;
     children: any;
-    onSubmit: () => void;
+    onSubmit?: (data:any) => void;
 }
