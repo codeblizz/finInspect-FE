@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import Button from 'components/atomic/button';
-import Paragraph from 'components/atomic/paragragh';
+import Paragraph from 'components/atomic/paragraph';
 
 function SmartModal({
   isOpen,
@@ -12,6 +12,7 @@ function SmartModal({
   okButtonAction,
   cancelButtonText,
   okButtonText,
+  cancelButtonAction
 }: any) {
   return (
     <Dialog
@@ -23,7 +24,7 @@ function SmartModal({
       <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
       <div className='fixed inset-0 rounded-lg border-2 border-green-200 top-[40%] left-[35%] bottom-[35%] px-10 pb-7 text-center overflow-y-auto w-[35%] h-[32%] bg-green-900/50'>
         <Dialog.Panel className={'flex flex-col justify-center items-center'}>
-          <Dialog.Title className={'text-center mt-6 text-2xl underline underline-offset-8 decoration-wavy decoration-gray-500'}>
+          <Dialog.Title className={'text-center mt-6 text-lg text-white underline underline-offset-8 decoration-wavy decoration-gray-500'}>
             {modalTitle}
           </Dialog.Title>
           <Dialog.Description className={'my-8 text-white text-sm'}>
@@ -38,7 +39,7 @@ function SmartModal({
               value={''}
               className={'mr-5 border rounded-md px-3'}
               buttonText={cancelButtonText}
-              onClick={() => setOpen(false)}
+              onClick={cancelButtonAction}
             />
             <Button
               autoFocus={false}

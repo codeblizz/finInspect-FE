@@ -4,7 +4,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  content: ['./pages/**/*.{html,ts,tsx}', './components/**/*.{html,ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {},

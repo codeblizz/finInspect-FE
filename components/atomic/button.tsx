@@ -24,7 +24,7 @@ function Button({
       onClick={onClick}
     >
       <span className='flex justify-center items-center'>
-        {loader ? <Loader className='animate-spin' /> : buttonText}
+        {loader ? <Loader className='animate-spin p-1' /> : buttonText}
       </span>
     </button>
   );

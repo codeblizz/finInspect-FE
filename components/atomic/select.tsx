@@ -17,36 +17,24 @@ function CustomSelect({
   control,
   placeholder,
   className,
-  unregister,
   options,
   getValues,
   setValue,
   toMoveUp,
   fieldError,
-  setFormFieldValues,
-  formFieldValues,
-  watchFormValue,
+  selectedValue, 
+  setSelectedValue
 }: selectType) {
   const [focus, setFocus] = useState(false);
-  const [selectedValue, setSelectedValue] = useState({});
 
   const handleChange = (newOption: optionType) => {
     setValue(name, newOption);
     const value:any = getValues(name);
     setSelectedValue(value);
-    setFormFieldValues({
-      ...watchFormValue,
-      ...formFieldValues,
-      [name]: value,
-    });
   };
 
   if (name === 'countryCode')
     options = utils.moveUpSelectOptions(options, toMoveUp);
-
-  useEffect(() => {
-    unregister(name);
-  }, [selectedValue]);
 
   return (
     <div className='flex flex-col'>
@@ -57,7 +45,7 @@ function CustomSelect({
           <Select
             {...fields}
             instanceId={name}
-            defaultValue={getValues(name)}
+            // defaultValue={getValues(name)}
             value={selectedValue}
             onChange={handleChange}
             styles={countrySelectStyle}
@@ -79,9 +67,9 @@ function CustomSelect({
           />
         )}
       />
-      {fieldError?.value && (
+      {fieldError?.value && !selectedValue?.value && (
         <Span className='absolute mt-14 w-40 text-[11px] text-left text-red-400'>
-          {fieldError.value?.message}
+          {fieldError?.value?.message}
         </Span>
       )}
     </div>

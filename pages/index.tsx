@@ -3,9 +3,9 @@ import { Inter } from '@next/font/google';
 import styles from '../styles/Login.module.css';
 import regStyles from '../styles/Register.module.css';
 import Header from '../components/atomic/header';
-import LoginForm from '../components/molecules/loginForm';
+import LoginForm from '../components/organisms/loginForm';
 import LoginHero from '../components/molecules/hero';
-import RegisterForm from 'components/molecules/registerForm';
+import RegisterForm from 'components/organisms/registerForm';
 import { GetServerSideProps } from 'next';
 import registerService from 'services/register.service';
 

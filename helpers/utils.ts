@@ -4,8 +4,8 @@ const { publicRuntimeConfig } = getConfig();
 
 const utils = {
   formatError: ({ error }: IError) => {
-    const status = error.response.status;
-    const msg = error.response.data.message;
+    const status = error.response.status || error.data.status;
+    const msg = error.response.data.message || error.data.message;
     return {
       status,
       msg,

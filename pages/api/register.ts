@@ -10,12 +10,14 @@ const url = `/api/auth/${EnumTypes.REGISTER}`;
 const api = new MainRepository(url);
 
 registerHandler.post(async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log('next connect handler', req.body.params);
   try {
-    const result:any = await serverClient.post(url, { ...req.body.params });
-    return res.send(result.data);
-  } catch (error:any) {
-    return utils.formatError(error);
+    const result = await serverClient.post(url, { ...req.body.params });
+    return res.send({ message: result.data.message, status: result.status });
+  } catch (error: any) {
+    return res.send({
+      status: error.response.status,
+      message: error.response.data.message,
+    });
   }
 });
 

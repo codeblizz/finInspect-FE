@@ -59,8 +59,8 @@ function Input({
             <Span
               className={
                 category === 'loginInput'
-                  ? 'absolute top-[52%] mt-4 text-[11px] pl-[19px] text-red-400 w-40 text-left break-words'
-                  : 'top-[52%] text-[11px] w-40 pl-5 text-red-400 text-left break-words'
+                  ? 'absolute top-[51%] mt-4 lg:mt-9 text-[11px] pl-[19px] text-red-400 w-40 text-left break-words'
+                  : 'text-[11px] -mb-6 w-40 mt-2 text-red-400 text-left break-words'
               }
             >
               {fieldError?.message}
@@ -87,8 +87,8 @@ function Input({
             <Span
               className={
                 category === 'loginInput'
-                  ? 'absolute top-[41%] mt-[22px] w-40 text-[11px] text-left text-red-400'
-                  : 'absolute mt-14 w-40 text-[11px] text-left text-red-400'
+                  ? 'absolute top-[40%] mt-[22px] lg:mt-[42px] w-40 text-[11px] text-left text-red-400'
+                  : 'absolute mt-12 w-40 text-[11px] text-left text-red-400'
               }
             >
               {fieldError?.message}

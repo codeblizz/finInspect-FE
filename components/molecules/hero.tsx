@@ -5,7 +5,7 @@ import styles from '../../styles/Login.module.css';
 import Box from '../atomic/box';
 import classNames from 'classnames';
 import { BsDot } from 'react-icons/bs';
-import Paragraph from 'components/atomic/paragragh';
+import Paragraph from 'components/atomic/paragraph';
 
 function Hero() {
   const [index, setIndex] = useState(0);

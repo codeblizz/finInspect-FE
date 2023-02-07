@@ -1,5 +1,6 @@
 import axiosClient from 'helpers/httpClient/axiosClient';
 import { MainRepositoryInterface } from '../types/mainRepository.type';
+import axios from 'axios';
 
 class MainRepository<T> implements MainRepositoryInterface {
   constructor(public resource: String) {}

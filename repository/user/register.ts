@@ -8,8 +8,8 @@ class RegisterRepository extends MainRepository<RegisterProps> {
     super(EnumTypes.REGISTER);
   }
 
-  // async registerUser(data: any) {
-  //   return await axiosClient.post('/api/register', { data });
+  // async registerUser(payload: any) {
+  //   return await axiosClient.post('/api/register', { ...payload });
   // }
 
 }

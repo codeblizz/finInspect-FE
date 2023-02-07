@@ -1,13 +1,15 @@
 export type errorMsgType = {
     message: string
+    status?: boolean
 }
 
 export type errorType = {
-    status: string;
+    status: boolean;
     data: errorMsgType;
 }
 
 export type errorResponseType = {
+    data: errorMsgType;
     response: errorType;
 }
 
